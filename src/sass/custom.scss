@@ -1,0 +1,9 @@
+$enable-shadows: true;
+$enable-gradients: true;
+
+$primary: rgb(223, 0, 74);
+$body-color: #333;
+$body-bg: #f2f2f2;
+$navbar-dark-color: #fff;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./partials/typography";
