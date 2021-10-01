@@ -1,0 +1,8 @@
+$enable-shadows: true;
+$primary: rgb(223, 0, 74);
+
+$body-color: #333;
+$body-bg: #f2f2f2;
+
+@import "./variables/colors.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

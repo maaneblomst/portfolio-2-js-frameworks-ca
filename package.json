@@ -1,56 +1,26 @@
 {
-  "name": "js-frameworks-course-assignment-tonje-holm",
+  "name": "js-frameworks-course-assignment-maaneblomst",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
-    "@hookform/resolvers": "^2.5.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@hookform/resolvers": "^2.5.2",
     "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
+    "next": "^11.1.2",
+    "react": "17.0.2",
     "react-bootstrap": "^1.6.0",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.5.3",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.7.1",
+    "sass": "^1.34.0",
+    "sharp": "^0.29.1",
     "yup": "^0.32.9"
   },
-  "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "bootstrap": "^5.0.1"
   }
 }
