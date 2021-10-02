@@ -2,10 +2,10 @@ import NavLinks from "./NavLinks";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 
-export default function Navigation({ children }) {
+export default function Navigation() {
   return (
     <>
-      <Navbar bg="primary" variant="dark" expand="lg" className="mb-4">
+      <Navbar bg="primary" variant="dark" expand="lg">
         <Container className="container-fluid">
           <Navbar.Brand href="/">JS Frameworks CA</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -14,7 +14,6 @@ export default function Navigation({ children }) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="container">{children}</div>
     </>
   );
 }
