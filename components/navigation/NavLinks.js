@@ -13,20 +13,29 @@ export default function NavLinks() {
     setAuth(null);
     router.push("/");
   }
+
   return (
     <>
       <Nav className="ml-auto">
-        <Link href="/">Home</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="/" passHref>
+          <Nav.Link>Home</Nav.Link>
+        </Link>
+        <Link href="/contact" passHref>
+          <Nav.Link>Contact</Nav.Link>
+        </Link>
         {auth ? (
           <>
-            <Link href="/admin">Admin</Link>
+            <Link href="/admin" passHref>
+              <Nav.Link>Admin</Nav.Link>
+            </Link>
             <Button onClick={logOut} variant="link" className="text-white">
               <i className="fas fa-sign-out-alt"></i>
             </Button>
           </>
         ) : (
-          <Link href="/login">Login</Link>
+          <Link href="/login" passHref>
+            <Nav.Link>Login</Nav.Link>
+          </Link>
         )}
       </Nav>
     </>
