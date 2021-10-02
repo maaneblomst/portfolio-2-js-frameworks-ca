@@ -14,13 +14,10 @@ export default function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
       // Get from local storage by key
-      const item = window.localStorage.getItem(key);
       if (typeof window !== "undefined") {
         const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : initialValue;
       }
-
-      // Parse stored json or if none return initialValue
-      return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       // If error also return initialValue
       console.log(error);
@@ -39,7 +36,6 @@ export default function useLocalStorage(key, initialValue) {
       setStoredValue(valueToStore);
 
       // Save to local storage
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
       if (typeof window !== "undefined") {
         localStorage.setItem(key, JSON.stringify(valueToStore));
       }
