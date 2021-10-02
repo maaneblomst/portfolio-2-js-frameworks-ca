@@ -1,14 +1,14 @@
-import Head from "../components/layout/Head";
+import NextHead from "../components/layout/NextHead";
 import Heading from "../components/layout/Heading";
-import Navigation from "../components/navigation/Navigation";
+import Layout from "../components/layout/Layout";
 import LoginForm from "../components/forms/LoginForm";
 
 export default function Login() {
   return (
-    <Navigation>
-      <Head title="Login" />
+    <Layout>
+      <NextHead title="Login" />
       <Heading title="Login" />
       <LoginForm />
-    </Navigation>
+    </Layout>
   );
 }

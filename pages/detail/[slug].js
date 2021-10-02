@@ -1,8 +1,8 @@
 import axios from "axios";
 import moment from "moment";
 import { BASE_URL } from "../../constants/api";
-import Head from "../../components/layout/Head";
-import Navigation from "../../components/navigation/Navigation";
+import NextHead from "../../components/layout/NextHead";
+import Layout from "../../components/layout/Layout";
 
 export default function Post({ post }) {
   function createMarkup() {
@@ -14,12 +14,12 @@ export default function Post({ post }) {
     return formattedDate;
   }
   return (
-    <Navigation>
-      <Head title={post.title.rendered} />
+    <Layout>
+      <NextHead title={post.title.rendered} />
       <h1>{post.title.rendered}</h1>
       <span className="text-muted">Published: {dateFormatter(post.date)}</span>
       <div dangerouslySetInnerHTML={createMarkup()} />
-    </Navigation>
+    </Layout>
   );
 }
 

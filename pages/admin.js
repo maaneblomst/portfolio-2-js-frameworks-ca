@@ -1,12 +1,12 @@
-import Head from "../components/layout/Head";
+import NextHead from "../components/layout/NextHead";
 import Heading from "../components/layout/Heading";
-import Navigation from "../components/navigation/Navigation";
+import Layout from "../components/layout/Layout";
 
 export default function Admin() {
   return (
-    <Navigation>
-      <Head title="Admin" />
+    <Layout>
+      <NextHead title="Admin" />
       <Heading title="Admin" />
-    </Navigation>
+    </Layout>
   );
 }
