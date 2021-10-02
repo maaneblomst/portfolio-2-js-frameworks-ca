@@ -11,13 +11,19 @@ const schema = yup.object().shape({
   firstName: yup
     .string()
     .required("Please enter your first name")
-    .min(3, "Your name must be at least 3 characters."),
+    .min(3, "Your name must be at least ${min} characters."),
   lastName: yup
     .string()
     .required("Please enter your last name")
-    .min(4, "Your name must be at least 4 characters."),
-  email: yup.string().required("Please enter your e-mail").email(),
-  subject: yup.string().required("Please enter the subject"),
+    .min(4, "Your name must be at least ${min} characters."),
+  email: yup
+    .string()
+    .email("Must be a valid e-mail")
+    .required("Please enter your e-mail"),
+  subject: yup
+    .string()
+    .oneOf(["feedback", "suggestions"], "Please pick a subject")
+    .required("Please pick a subject"),
   message: yup
     .string()
     .required("Please enter a message")
@@ -82,7 +88,10 @@ export default function ContactForm() {
             {...register(
               "email",
               { required: true },
-              { pattern: /^\S+@\S+$/i }
+              {
+                pattern:
+                  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              }
             )}
           />
           {errors.email && (
@@ -93,11 +102,13 @@ export default function ContactForm() {
           <Form.Label>Subject</Form.Label>
           <Form.Control
             as="select"
+            data={["feedback", "suggestions"]}
+            name="subject"
             {...register("subject", { required: true })}
           >
+            <option defaultValue>Click to pick a subject</option>
             <option value="feedback">Feedback</option>
             <option value="suggestions">Suggestions</option>
-            <option value="scomplaints">Complaints</option>
           </Form.Control>
           {errors.subject && (
             <Alert className="alert-warning mt-2">
@@ -117,7 +128,7 @@ export default function ContactForm() {
         )}
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="mt-2">
         Submit
       </Button>
     </Form>

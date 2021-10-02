@@ -14,7 +14,10 @@ import Button from "react-bootstrap/Button";
 const url = BASE_URL + TOKEN_PATH;
 
 const schema = yup.object().shape({
-  username: yup.string().required("Please enter your username"),
+  username: yup
+    .string()
+    .email("Must be a valid e-mail")
+    .required("Please enter your e-mail address"),
   password: yup.string().required("Please enter your password"),
 });
 
@@ -52,19 +55,19 @@ export default function LoginForm() {
       console.log(response.data);
     } catch (error) {
       console.log("error", error);
-      setLoginError(error.toString());
+      setLoginError("Wrong username or password. Please try again.");
     }
   }
   return (
     <>
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} className="mt-5">
         {loginError && <FormError variant="danger">{loginError}</FormError>}
         <FormGroup disabled={submit}>
           <Form.Label>Username</Form.Label>
           <Form.Control
             {...register("username")}
             name="username"
-            placeholder="username"
+            placeholder="you@juicynews.blog"
           />
           {errors.username && (
             <FormError variant="warning">{errors.username.message}</FormError>
