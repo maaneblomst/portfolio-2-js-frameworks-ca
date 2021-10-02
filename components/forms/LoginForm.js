@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { useState, useContext } from "react";
+import { useRouter, Router } from "next/router";
+import { useState, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -21,8 +21,18 @@ const schema = yup.object().shape({
 export default function LoginForm() {
   const [submit, setSubmit] = useState(false);
   const [loginError, setLoginError] = useState(null);
+  const [auth, setAuth] = useContext(AuthContext);
 
   const router = useRouter();
+
+  useEffect(() => {
+    const { pathname } = Router;
+    if (auth) {
+      setTimeout(function () {
+        router.push("/admin");
+      }, 1000);
+    }
+  });
 
   const {
     register,
@@ -32,8 +42,6 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
   });
 
-  const [, setAuth] = useContext(AuthContext);
-
   async function onSubmit(data) {
     setSubmit(true);
     setLoginError(null);
@@ -41,13 +49,10 @@ export default function LoginForm() {
     try {
       const response = await axios.post(url, data);
       setAuth(response.data);
-      router.push("/admin");
       console.log(response.data);
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());
-    } finally {
-      setSubmit(false);
     }
   }
   return (
