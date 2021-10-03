@@ -23,6 +23,9 @@ export default function NavLinks() {
         <Link href="/contact" passHref>
           <Nav.Link>Contact</Nav.Link>
         </Link>
+        <Link href="/favourites" passHref>
+          <Nav.Link>Favourites</Nav.Link>
+        </Link>
         {auth ? (
           <>
             <Link href="/admin" passHref>

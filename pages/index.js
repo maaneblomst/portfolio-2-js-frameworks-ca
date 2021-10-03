@@ -3,7 +3,6 @@ import moment from "moment";
 import Image from "next/image";
 import { BASE_URL } from "../constants/api";
 import NextHead from "../components/layout/NextHead";
-import Heading from "../components/layout/Heading";
 import Layout from "../components/layout/Layout";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -43,7 +42,7 @@ export default function Home(props) {
             );
           })}
         </Col>
-        <Col sm={3}>
+        <Col sm={3} className="p-3">
           <h2 className="fs-1">Juicy News</h2>
           <p className="text-muted">
             Hi. We're Juicy News, and run this juicy blog about vegetables and
