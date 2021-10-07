@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["https://www.holmcreations.com/test-api/"],
+    domains: ["https://test.holmcreations.com/"],
   },
   async redirects() {
     return [
