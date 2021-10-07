@@ -42,19 +42,6 @@ export default function Home(props) {
             );
           })}
         </Col>
-        <Col sm={3} className="p-3">
-          <h2 className="fs-1">Juicy News</h2>
-          <p className="text-muted">
-            Hi. We're Juicy News, and run this juicy blog about vegetables and
-            fruits.
-          </p>
-          <Image
-            src="/images/juicy_news.png"
-            alt="delicious smoothie jars filled with fresh fruits"
-            width={500}
-            height={500}
-          />
-        </Col>
       </Row>
     </Layout>
   );
