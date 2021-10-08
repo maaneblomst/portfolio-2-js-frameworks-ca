@@ -3,6 +3,10 @@ import moment from "moment";
 import { BASE_URL } from "../../constants/api";
 import NextHead from "../../components/layout/NextHead";
 import Layout from "../../components/layout/Layout";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { Jumbotron } from "react-bootstrap";
 
 export default function Post({ post }) {
   function createMarkup() {
@@ -16,9 +20,29 @@ export default function Post({ post }) {
   return (
     <Layout>
       <NextHead title={post.title.rendered} />
-      <h1>{post.title.rendered}</h1>
-      <span className="text-muted">Published: {dateFormatter(post.date)}</span>
-      <div dangerouslySetInnerHTML={createMarkup()} />
+      <Container>
+        <Row>
+          <Col />
+          <Col sm={12}>
+            <Container className="text-center m-2 p-2">
+              <h1>{post.title.rendered}</h1>
+              <span className="text-muted">
+                Published: {dateFormatter(post.date)}
+              </span>
+            </Container>
+          </Col>
+          <Col />
+        </Row>
+        <Row>
+          <Col />
+          <Col>
+            <Container className="p-2 m-2">
+              <div dangerouslySetInnerHTML={createMarkup()} />
+            </Container>
+          </Col>
+          <Col />
+        </Row>
+      </Container>
     </Layout>
   );
 }

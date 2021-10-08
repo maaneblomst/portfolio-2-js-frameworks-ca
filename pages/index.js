@@ -7,14 +7,15 @@ import Layout from "../components/layout/Layout";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Hero from "../components/layout/Hero";
 
 export default function Home(props) {
   return (
     <Layout>
       <NextHead title="Home" />
-      <Container className="hero-image p-0 m-0" />
+      <Hero />
       <Row>
-        <Col sm={9} className="p-0">
+        <Col sm={12} md={10}>
           {props.posts.map((post) => {
             function createMarkup() {
               return { __html: `${post.excerpt.rendered}` };
@@ -33,7 +34,7 @@ export default function Home(props) {
                 <div dangerouslySetInnerHTML={createMarkup()} />
                 <a
                   key={post.slug}
-                  href={`detail/${post.slug}`}
+                  href={`details/${post.slug}`}
                   className="d-block"
                 >
                   Read more..

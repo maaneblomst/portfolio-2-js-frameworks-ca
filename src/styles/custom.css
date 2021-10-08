@@ -4,6 +4,40 @@ nav a {
   padding-left: 1em;
 }
 
+h1, .h1,
+h2,
+.h2 {
+  font-family: "Lobster", cursive;
+}
+
+h3, .h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+.hero-image {
+  background-image: url("../../../public/images/home.jpg");
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.bgimage {
+  width: 100%;
+  height: 300px;
+  background: #df004a;
+  background-size: cover;
+}
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -91,12 +125,16 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+
+h2,
+.h2 {
   font-size: calc(1.325rem + 0.9vw);
 }
 
 @media (min-width: 1200px) {
-  h2, .h2 {
+  
+  h2,
+  .h2 {
     font-size: 2rem;
   }
 }
@@ -633,31 +671,31 @@ progress {
 
 @media (min-width: 576px) {
   .container, .container-sm {
-    max-width: 540px;
+    max-width: 700px;
   }
 }
 
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px;
+    max-width: 960px;
   }
 }
 
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
-    max-width: 960px;
+    max-width: 1200px;
   }
 }
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1140px;
+    max-width: 1400px;
   }
 }
 
 @media (min-width: 1400px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
-    max-width: 1320px;
+    max-width: 1500px;
   }
 }
 

@@ -1,0 +1,11 @@
+html,
+body {
+  overflow-x: hidden;
+}
+.bgimage {
+  background-image: url("/images/JuicyFruits.jpg");
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
